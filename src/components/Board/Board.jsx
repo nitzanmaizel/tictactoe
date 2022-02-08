@@ -8,6 +8,8 @@ const Board = () => {
   const [isXNext, setIsXNext] = useState(true);
 
   const handleSquareClick = position => {
+    if (board[position]) return;
+
     setBoard(preBoardValue => {
       return preBoardValue.map((square, squarePosition) => {
         if (squarePosition === position) {
