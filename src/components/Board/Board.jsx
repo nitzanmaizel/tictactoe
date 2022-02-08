@@ -5,6 +5,7 @@ import './Board.scss';
 
 const Board = () => {
   const [board, setBoard] = useState(Array(9).fill(null));
+  const [isXNext, setIsXNext] = useState(true);
 
   const handleSquareClick = position => {
     console.log(position);
