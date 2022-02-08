@@ -17,7 +17,8 @@ const Board = () => {
         return square;
       });
     });
-    console.log(position);
+
+    setIsXNext(!isXNext);
   };
 
   const renderSquare = position => {
