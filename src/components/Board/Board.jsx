@@ -8,6 +8,15 @@ const Board = () => {
   const [isXNext, setIsXNext] = useState(true);
 
   const handleSquareClick = position => {
+    setBoard(preBoardValue => {
+      return preBoardValue.map((square, squarePosition) => {
+        if (squarePosition === position) {
+          return isXNext ? 'X' : '0';
+        }
+
+        return square;
+      });
+    });
     console.log(position);
   };
 
