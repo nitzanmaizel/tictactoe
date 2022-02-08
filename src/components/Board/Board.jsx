@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Square from '../Square/Square';
 
 import './Board.scss';
 
 const Board = () => {
+  const [board, setBoard] = useState(Array(9).fill(null));
   return (
     <div className="board">
       <div className="board-row">
