@@ -1,13 +1,29 @@
 .square {
   width: 80px;
   height: 80px;
-  border-right: 2px solid #000;
-  font-size: 2.5rem;
-  padding: 0;
-  overflow: hidden;
-  transition: all 0.2s;
+  min-width: 33%;
 
-  &:last-child {
-    border-right: none;
+  &:nth-child(2) {
+    border-left: 2px solid #000;
+    border-right: 2px solid #000;
+  }
+
+  &:nth-child(4) {
+    border-top: 2px solid #000;
+    border-bottom: 2px solid #000;
+  }
+
+  &:nth-child(5) {
+    border: 2px solid #000;
+  }
+
+  &:nth-child(6) {
+    border-top: 2px solid #000;
+    border-bottom: 2px solid #000;
+  }
+
+  &:nth-child(8) {
+    border-left: 2px solid #000;
+    border-right: 2px solid #000;
   }
 }
