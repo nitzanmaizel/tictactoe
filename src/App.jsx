@@ -8,6 +8,11 @@ const App = () => {
   const [board, setBoard] = useState(Array(9).fill(null));
   const [isXNext, setIsXNext] = useState(true);
 
+  const winner = calculateWinner(board);
+  const massage = winner
+    ? `Winner is ${winner}`
+    : `Next Player Is ${isXNext ? 'X' : '0'}`;
+
   const handleSquareClick = position => {
     if (board[position]) return;
 
