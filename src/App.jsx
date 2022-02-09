@@ -14,7 +14,7 @@ const App = () => {
     : `Next Player Is ${isXNext ? 'X' : '0'}`;
 
   const handleSquareClick = position => {
-    if (board[position]) return;
+    if (board[position] || winner) return;
 
     setBoard(preBoardValue => {
       return preBoardValue.map((square, squarePosition) => {
