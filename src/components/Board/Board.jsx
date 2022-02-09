@@ -4,12 +4,12 @@ import Square from '../Square/Square';
 import './Board.scss';
 
 const Board = ({ boardState, onClick }) => {
-  const renderSquare = (squareValue, position) => {
+  const renderSquare = (squareValue, squarePosition) => {
     return (
       <Square
         key={position}
         value={squareValue}
-        onClick={() => onClick(position)}
+        onClick={() => onClick(squarePosition)}
       />
     );
   };
