@@ -3,22 +3,22 @@ import Square from '../Square/Square';
 
 import './Board.scss';
 
-const Board = ({ boardState, onClick }) => {
-  const renderSquare = (squareValue, squarePosition) => {
-    return (
-      <Square
-        key={position}
-        value={squareValue}
-        onClick={() => onClick(squarePosition)}
-      />
-    );
-  };
-
+const Board = ({ boardState = [], onClick }) => {
   const renderBoard = boardState => {
-    return boardState.map((value, index) => renderSquare(value, index));
+    return boardState.map((value, index) => (
+      <Square key={index} value={value} onClick={() => onClick(index)} />
+    ));
   };
 
-  return <div className="board">{renderBoard(boardState)}</div>;
+  return (
+    <div className="board">
+      {boardState.length === 9 ? (
+        renderBoard(boardState)
+      ) : (
+        <div>Loading...</div>
+      )}
+    </div>
+  );
 };
 
 export default Board;
