@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Board from './components/Board/Board';
 
 import './styles/root.scss';
+import { calculateWinner } from './utils/CalculateWinner';
 
 const App = () => {
   const [board, setBoard] = useState(Array(9).fill(null));
