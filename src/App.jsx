@@ -19,7 +19,7 @@ const App = () => {
     setBoard(preBoardValue => {
       return preBoardValue.map((square, squarePosition) => {
         if (squarePosition === position) {
-          return isXNext ? 'X' : '0';
+          return isXNext ? 'X' : 'O';
         }
 
         return square;
@@ -32,6 +32,7 @@ const App = () => {
   return (
     <div className="app">
       <h1>TIC TAC TOE</h1>
+      <h2>{massage}</h2>
       <Board boardState={board} onClick={handleSquareClick} />
     </div>
   );
