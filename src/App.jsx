@@ -15,15 +15,15 @@ const App = () => {
 
   const [currentMove, setCurrentMove] = useState(0);
 
-  const current = gameHistory[currentMove];
+  const currentGame = gameHistory[currentMove];
 
-  const winner = calculateWinner(current.board);
+  const winner = calculateWinner(currentGame.board);
   const massage = winner
     ? `Winner is ${winner}`
-    : `Next Player Is ${current.isXNext ? 'X' : '0'}`;
+    : `Next Player Is ${currentGame.isXNext ? 'X' : '0'}`;
 
   const handleSquareClick = position => {
-    if (current.board[position] || winner) return;
+    if (currentGame.board[position] || winner) return;
 
     setGameHistory(preBoardValue => {
       const last = preBoardValue[preBoardValue.length - 1];
@@ -48,7 +48,7 @@ const App = () => {
     <div className="app">
       <h1>TIC TAC TOE</h1>
       <h2>{massage}</h2>
-      <Board boardState={current.board} onClick={handleSquareClick} />
+      <Board boardState={currentGame.board} onClick={handleSquareClick} />
       <GameHistory
         gameHistory={gameHistory}
         moveToMoveNumber={moveToMoveNumber}
