@@ -4,6 +4,10 @@
   min-width: 33%;
   font-size: 50px;
 
+  &.winning {
+    font-weight: 700;
+  }
+
   &:nth-child(2) {
     border-left: 2px solid #000;
     border-right: 2px solid #000;
