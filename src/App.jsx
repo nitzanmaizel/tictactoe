@@ -47,14 +47,20 @@ const App = () => {
 
   return (
     <div className="app">
-      <h1>TIC TAC TOE</h1>
+      <h1>
+        TIC <span className="text-green">TAC</span> TOE
+      </h1>
       <StatusMessage winner={winner} currentGame={currentGame} />
       <Board
         boardState={currentGame.board}
         onClick={handleSquareClick}
         winningSquares={winningSquares}
       />
-      <button type="button" onClick={() => startNewGame()}>
+      <button
+        type="button"
+        className="btn-reset "
+        onClick={() => startNewGame()}
+      >
         Start New Game
       </button>
       <GameHistory
