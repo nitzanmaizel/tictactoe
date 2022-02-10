@@ -5,7 +5,9 @@ const GameHistory = ({ gameHistory }) => {
     <ul>
       {gameHistory.map((_, move) => (
         <li key={move}>
-          <button>{move}</button>
+          <button>
+            {move === 0 ? 'Go to game start' : `Go to move number ${move}`}
+          </button>
         </li>
       ))}
     </ul>
