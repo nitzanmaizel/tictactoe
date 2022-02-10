@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import Board from './components/Board/Board';
+import GameHistory from './components/GameHistory/GameHistory';
 
 import './styles/root.scss';
 import { calculateWinner } from './utils/CalculateWinner';
 
 const App = () => {
-  const [history, setHistory] = useState([
+  const [gameHistory, setGameHistory] = useState([
     {
       board: Array(9).fill(null),
       isXNext: true,
@@ -14,7 +15,7 @@ const App = () => {
 
   const [currentMove, setCurrentMove] = useState(0);
 
-  const current = history[currentMove];
+  const current = gameHistory[currentMove];
 
   const winner = calculateWinner(current.board);
   const massage = winner
@@ -24,7 +25,7 @@ const App = () => {
   const handleSquareClick = position => {
     if (current.board[position] || winner) return;
 
-    setHistory(preBoardValue => {
+    setGameHistory(preBoardValue => {
       const last = preBoardValue[preBoardValue.length - 1];
 
       const newBoard = last.board.map((square, squarePosition) => {
@@ -46,6 +47,7 @@ const App = () => {
       <h1>TIC TAC TOE</h1>
       <h2>{massage}</h2>
       <Board boardState={current.board} onClick={handleSquareClick} />
+      <GameHistory gameHistory={gameHistory} />
     </div>
   );
 };

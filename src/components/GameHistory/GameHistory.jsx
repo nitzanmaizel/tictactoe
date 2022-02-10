@@ -3,11 +3,11 @@ import React from 'react';
 const GameHistory = ({ gameHistory }) => {
   return (
     <ul>
-      {gameHistory.map((_, index) => {
-        <li>
-          <button>{index}</button>
-        </li>;
-      })}
+      {gameHistory.map((_, move) => (
+        <li key={move}>
+          <button>{move}</button>
+        </li>
+      ))}
     </ul>
   );
 };
