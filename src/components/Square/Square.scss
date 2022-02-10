@@ -3,32 +3,50 @@
   height: 80px;
   min-width: 33%;
   font-size: 50px;
+  transition: all 0.2s;
 
   &.winning {
-    font-weight: 700;
+    animation: scaleSquare 1.4s infinite;
+    @keyframes scaleSquare {
+      0% {
+        transform: 50px;
+      }
+      25% {
+        transform: 55px;
+      }
+      50% {
+        font-size: 60px;
+      }
+      75% {
+        font-size: 55px;
+      }
+      100% {
+        font-size: 50px;
+      }
+    }
   }
 
   &:nth-child(2) {
-    border-left: 2px solid #000;
-    border-right: 2px solid #000;
+    border-left: 2px solid #fff;
+    border-right: 2px solid #fff;
   }
 
   &:nth-child(4) {
-    border-top: 2px solid #000;
-    border-bottom: 2px solid #000;
+    border-top: 2px solid #fff;
+    border-bottom: 2px solid #fff;
   }
 
   &:nth-child(5) {
-    border: 2px solid #000;
+    border: 2px solid #fff;
   }
 
   &:nth-child(6) {
-    border-top: 2px solid #000;
-    border-bottom: 2px solid #000;
+    border-top: 2px solid #fff;
+    border-bottom: 2px solid #fff;
   }
 
   &:nth-child(8) {
-    border-left: 2px solid #000;
-    border-right: 2px solid #000;
+    border-left: 2px solid #fff;
+    border-right: 2px solid #fff;
   }
 }
