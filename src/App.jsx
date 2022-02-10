@@ -42,12 +42,17 @@ const App = () => {
     setCurrentMove(currentMove + 1);
   };
 
+  const moveToMoveNumber = targetMove => setCurrentMove(targetMove);
+
   return (
     <div className="app">
       <h1>TIC TAC TOE</h1>
       <h2>{massage}</h2>
       <Board boardState={current.board} onClick={handleSquareClick} />
-      <GameHistory gameHistory={gameHistory} />
+      <GameHistory
+        gameHistory={gameHistory}
+        moveToMoveNumber={moveToMoveNumber}
+      />
     </div>
   );
 };
