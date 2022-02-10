@@ -58,7 +58,7 @@ const App = () => {
       />
       <button
         type="button"
-        className="btn-reset "
+        className={`btn-reset ${winner ? 'active' : ''}`}
         onClick={() => startNewGame()}
       >
         Start New Game
