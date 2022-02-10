@@ -19,7 +19,7 @@ const App = () => {
 
   const currentGame = gameHistory[currentMove];
 
-  const winner = calculateWinner(currentGame.board);
+  const { winner, winningSquares } = calculateWinner(currentGame.board);
 
   const handleSquareClick = position => {
     if (currentGame.board[position] || winner) return;
