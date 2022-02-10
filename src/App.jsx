@@ -69,6 +69,7 @@ const App = () => {
         moveToMoveNumber={moveToMoveNumber}
         currentMove={currentMove}
       />
+      <div className="bg-balls" />
     </div>
   );
 };
