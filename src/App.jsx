@@ -40,6 +40,11 @@ const App = () => {
 
   const moveToMoveNumber = targetMove => setCurrentMove(targetMove);
 
+  const startNewGame = () => {
+    setGameHistory(NEW_GAME);
+    setCurrentMove(0);
+  };
+
   return (
     <div className="app">
       <h1>TIC TAC TOE</h1>
@@ -49,6 +54,9 @@ const App = () => {
         onClick={handleSquareClick}
         winningSquares={winningSquares}
       />
+      <button type="button" onClick={() => startNewGame()}>
+        Start New Game
+      </button>
       <GameHistory
         gameHistory={gameHistory}
         moveToMoveNumber={moveToMoveNumber}
