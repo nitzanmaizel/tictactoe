@@ -9,11 +9,20 @@ export const calculateWinner = board => {
     [0, 4, 8],
     [2, 4, 6],
   ];
+
   for (let i = 0; i < lines.length; i++) {
     const [a, b, c] = lines[i];
+
     if (board[a] && board[a] === board[b] && board[a] === board[c]) {
-      return board[a];
+      return {
+        winner: board[a],
+        winningSquares: [a, b, c],
+      };
     }
   }
-  return null;
+
+  return {
+    winner: null,
+    winningSquares: [],
+  };
 };
