@@ -6,7 +6,10 @@ const StatusMessage = ({ winner, currentGame }) => {
   return (
     <h2>
       {winner && `Winner is ${winner}`}
-      {!winner && `Next Player Is ${currentGame.isXNext ? 'X' : '0'}`}
+      {!winner &&
+        !noMovesLeft &&
+        `Next Player Is ${currentGame.isXNext ? 'X' : '0'}`}
+      {!winner && noMovesLeft && 'X and O tied'}
     </h2>
   );
 };
