@@ -1,7 +1,7 @@
 import React from 'react';
 
-const StatusMessage = () => {
-  return <h2>StatusMessage</h2>;
+const StatusMessage = ({ winner }) => {
+  return <h2>{winner && `Winner is ${winner}`}</h2>;
 };
 
 export default StatusMessage;
