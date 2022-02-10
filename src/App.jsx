@@ -47,7 +47,11 @@ const App = () => {
     <div className="app">
       <h1>TIC TAC TOE</h1>
       <StatusMessage winner={winner} currentGame={currentGame} />
-      <Board boardState={currentGame.board} onClick={handleSquareClick} />
+      <Board
+        boardState={currentGame.board}
+        onClick={handleSquareClick}
+        winningSquares={winningSquares}
+      />
       <GameHistory
         gameHistory={gameHistory}
         moveToMoveNumber={moveToMoveNumber}
