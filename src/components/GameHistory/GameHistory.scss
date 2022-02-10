@@ -1,3 +1,38 @@
-.activeButton {
-  font-weight: 700;
+$green: #12e177;
+
+.GameHistory-wrapper {
+  width: 300px;
+  text-align: center;
+  margin-bottom: 20px;
+
+  .GameHistory {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+
+    li {
+      list-style: none;
+      text-align: left;
+
+      &:before {
+        content: '';
+        border-radius: 50%;
+        display: inline-block;
+        height: 5px;
+        width: 5px;
+        background-color: $green;
+        margin-right: 4px;
+        margin-bottom: 1px;
+      }
+
+      .btn-move {
+        color: #fff;
+
+        &.activeButton {
+          font-weight: bold;
+          color: $green;
+        }
+      }
+    }
+  }
 }
