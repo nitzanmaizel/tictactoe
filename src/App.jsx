@@ -19,7 +19,12 @@ const App = () => {
   const { winner, winningSquares } = calculateWinner(currentGame.board);
 
   const handleSquareClick = position => {
-    if (currentGame.board[position] || winner) return;
+    if (
+      currentGame.board[position] ||
+      winner ||
+      gameHistory.length !== currentMove + 1
+    )
+      return;
 
     setGameHistory(preBoardValue => {
       const last = preBoardValue[preBoardValue.length - 1];
