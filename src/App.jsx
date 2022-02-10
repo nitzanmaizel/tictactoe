@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
+
 import Board from './components/Board/Board';
 import GameHistory from './components/GameHistory/GameHistory';
 import StatusMessage from './components/StatusMessage/StatusMessage';
 
-import './styles/root.scss';
 import { calculateWinner } from './utils/CalculateWinner';
+
+import './styles/root.scss';
 
 const App = () => {
   const [gameHistory, setGameHistory] = useState([
