@@ -2,9 +2,13 @@ import React from 'react';
 
 import './Square.scss';
 
-const Square = ({ value, onClick }) => {
+const Square = ({ value, onClick, isWinningSquare }) => {
   return (
-    <button type="button" className="square" onClick={onClick}>
+    <button
+      type="button"
+      className={`square ${isWinningSquare ? 'winning' : ''}`}
+      onClick={onClick}
+    >
       {value}
     </button>
   );
