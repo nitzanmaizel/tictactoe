@@ -8,13 +8,10 @@ import { calculateWinner } from './utils/CalculateWinner';
 
 import './styles/root.scss';
 
+const NEW_GAME = [{ board: Array(9).fill(null), isXNext: true }];
+
 const App = () => {
-  const [gameHistory, setGameHistory] = useState([
-    {
-      board: Array(9).fill(null),
-      isXNext: true,
-    },
-  ]);
+  const [gameHistory, setGameHistory] = useState(NEW_GAME);
   const [currentMove, setCurrentMove] = useState(0);
 
   const currentGame = gameHistory[currentMove];
