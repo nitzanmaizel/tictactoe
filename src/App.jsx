@@ -63,6 +63,7 @@ const App = () => {
       >
         Start New Game
       </button>
+      <h2 className="font-normal">Current Game History</h2>
       <GameHistory
         gameHistory={gameHistory}
         moveToMoveNumber={moveToMoveNumber}
