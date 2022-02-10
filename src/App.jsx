@@ -52,6 +52,7 @@ const App = () => {
       <GameHistory
         gameHistory={gameHistory}
         moveToMoveNumber={moveToMoveNumber}
+        currentMove={currentMove}
       />
     </div>
   );
